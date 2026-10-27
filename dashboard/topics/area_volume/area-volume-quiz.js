@@ -1,383 +1,317 @@
-/* Area & Volume quiz  EPre S3 L07 E9; paginated MC (10), figures beside stems */
-(function () {
-  "use strict";
-
-  const FIG = "quiz-figures/";
-
-  const VESSEL_INTRO =
-    "The figure shows a vertical right conical vessel containing some water. The ratio of the curved surface area of the vessel to area of the surface of the vessel in contact with water is $36 : 25$.";
-
-  const QUIZ = [
+/* JM32 Areas and Volumes III - section quizzes */
+SectionQuiz.init({
+  quizId: "math-jm32",
+  section: "JM32",
+  sets: [
     {
-      id: 1,
-      type: "mc",
-      prompt: "What is the volume of pyramid in the figure?",
-      figures: [{ src: FIG + "q1-pyramid.png", alt: "Right pyramid with base 5 cm, 12 cm and height 16 cm" }],
-      choices: ["320\\text{ cm}^3", "230\\text{ cm}^3", "160\\text{ cm}^3", "80\\text{ cm}^3"],
-      answer: 2,
-    },
-    {
-      id: 2,
-      type: "mc",
-      prompt:
-        "In the figure, the height of the right circular cone is $4$ cm and its base radius is $3$ cm. The base radius of the cylinder is $2$ cm. If they have the same volume, find the height of the cylinder.",
-      figures: [
-        { src: FIG + "q2-cone.png", alt: "Cone height 4 cm, radius 3 cm" },
-        { src: FIG + "q2-cylinder.png", alt: "Cylinder radius 2 cm" },
+      key: "l01",
+      label: "L01 · Pyramids",
+      idPrefix: "jm32-",
+      questions: [
+        {
+          id: 1,
+          prompt: "The volume of a pyramid is",
+          choices: [
+            "base area × height",
+            "\\(\\frac{1}{2}\\) × base area × height",
+            "\\(\\frac{1}{3}\\) × base area × height",
+            "4πr³",
+          ],
+          answer: 2,
+        },
+        {
+          id: 2,
+          prompt: "A pyramid has height 12 cm and hexagonal base area 90 cm². Its volume is",
+          choices: [
+            "360 cm³",
+            "540 cm³",
+            "720 cm³",
+            "1 080 cm³",
+          ],
+          answer: 0,
+        },
+        {
+          id: 3,
+          prompt: "A right pyramid has volume 80 cm³ and base area 30 cm². Its height is",
+          choices: [
+            "6 cm",
+            "8 cm",
+            "10 cm",
+            "16 cm",
+          ],
+          answer: 1,
+        },
+        {
+          id: 4,
+          prompt: "A square-based pyramid has volume 288 cm³ and height 6 cm. A side of the base is",
+          choices: [
+            "6 cm",
+            "8 cm",
+            "12 cm",
+            "18 cm",
+          ],
+          answer: 2,
+        },
+        {
+          id: 5,
+          prompt: "If the height of a pyramid is doubled and the base area is unchanged, the volume is",
+          choices: [
+            "unchanged",
+            "doubled",
+            "tripled",
+            "multiplied by 4",
+          ],
+          answer: 1,
+        },
       ],
-      figureLayout: "row",
-      choices: ["2\\text{ cm}", "3\\text{ cm}", "4\\text{ cm}", "6\\text{ cm}"],
-      answer: 1,
     },
     {
-      id: 3,
-      type: "mc",
-      prompt:
-        "$27$ small solid metal spheres each of radius $3$ cm are melted and recast into a larger solid metal sphere. Find the surface area of the large sphere in terms of \u03c0.",
-      choices: ["36\\pi\\text{ cm}^2", "162\\pi\\text{ cm}^2", "324\\pi\\text{ cm}^2", "972\\pi\\text{ cm}^2"],
-      answer: 2,
-    },
-    {
-      id: 4,
-      type: "mc",
-      prompt: "The surface area of a sphere is $64$\u03c0 cm\u00b2. Find the volume of the sphere.",
-      choices: [
-        "\\frac{64}{3}\\pi\\text{ cm}^3",
-        "\\frac{128}{3}\\pi\\text{ cm}^3",
-        "64\\pi\\text{ cm}^3",
-        "\\frac{256}{3}\\pi\\text{ cm}^3",
+      key: "l02",
+      label: "L02 · Cones and frustums",
+      idPrefix: "jm32-",
+      questions: [
+        {
+          id: 1,
+          prompt: "The volume of a circular cone is",
+          choices: [
+            "πr²h",
+            "\\(\\frac{1}{2}\\)πr²h",
+            "\\(\\frac{1}{3}\\)πr²h",
+            "\\(\\frac{4}{3}\\)πr³",
+          ],
+          answer: 2,
+        },
+        {
+          id: 2,
+          prompt: "The curved surface area of a cone is",
+          choices: [
+            "πr²",
+            "πrl",
+            "2πrh",
+            "4πr²",
+          ],
+          answer: 1,
+        },
+        {
+          id: 3,
+          prompt: "A cone has radius 5 cm and height 12 cm. Its slant height is",
+          choices: [
+            "13 cm",
+            "15 cm",
+            "17 cm",
+            "60 cm",
+          ],
+          answer: 0,
+        },
+        {
+          id: 4,
+          prompt: "A frustum is formed by cutting a small pyramid from a large similar pyramid. Its volume is",
+          choices: [
+            "the difference of the two pyramid volumes.",
+            "half of the large pyramid.",
+            "\\(\\frac{1}{3}\\) of the large pyramid.",
+            "the sum of the two volumes.",
+          ],
+          answer: 0,
+        },
+        {
+          id: 5,
+          prompt: "A cone has radius 7 cm and slant height 8 cm. Its curved surface area is",
+          choices: [
+            "56π cm²",
+            "64π cm²",
+            "112π cm²",
+            "196π cm²",
+          ],
+          answer: 0,
+        },
       ],
-      answer: 3,
     },
     {
-      id: 5,
-      type: "mc",
-      prompt:
-        "A vessel in the shape of an inverted right circular cone containing $324$ cm\u00b3 of water is placed vertically. If the depth of water in the vessel is $3/5$ of the height of the vessel, find the capacity of the vessel.",
-      figures: [{ src: FIG + "q5-vessel.png", alt: "Inverted cone partially filled with water" }],
-      choices: ["540\\text{ cm}^3", "750\\text{ cm}^3", "1250\\text{ cm}^3", "1500\\text{ cm}^3"],
-      answer: 3,
-    },
-    {
-      id: 6,
-      type: "mc",
-      prompt:
-        "The figure shows a small component of a plastic model. The shapes of its upper part and lower part are a hemisphere and a cylinder respectively. Their base radii are $4$ mm and the height of the cylinder is $10$ mm. Find the volume of the component.\n(Give the answer correct to $3$ significant figures.)",
-      figures: [{ src: FIG + "q6-component.png", alt: "Hemisphere on top of a cylinder, radius 4 mm" }],
-      choices: ["288\\text{ mm}^3", "503\\text{ mm}^3", "637\\text{ mm}^3", "800\\text{ mm}^3"],
-      answer: 2,
-    },
-    {
-      id: 7,
-      type: "mc",
-      prompt:
-        "The height of a solid right pyramid with a square base of side $10$ cm is $12$ cm. Find the total surface area of the pyramid.",
-      figures: [{ src: FIG + "q7-pyramid.png", alt: "Square-based right pyramid, base 10 cm, height 12 cm" }],
-      choices: ["260\\text{ cm}^2", "300\\text{ cm}^2", "360\\text{ cm}^2", "400\\text{ cm}^2"],
-      answer: 2,
-    },
-    {
-      id: 8,
-      type: "mc",
-      prompt:
-        VESSEL_INTRO + "\n(a) Find the ratio of the base radius of the vessel to the radius of the water surface.",
-      choices: ["5:6", "6:5", "25:36", "36:25"],
-      answer: 1,
-    },
-    {
-      id: 9,
-      type: "mc",
-      prompt:
-        "The base radius of a cone is $7$ cm and its slant height is $25$ cm. Find the curved surface area of the cone.",
-      choices: ["150\\pi\\text{ cm}^2", "175\\pi\\text{ cm}^2", "200\\pi\\text{ cm}^2", "175\\text{ cm}^2"],
-      answer: 1,
-    },
-    {
-      id: 10,
-      type: "mc",
-      prompt:
-        VESSEL_INTRO + "\nIt is given that the vessel contains $600$ cm\u00b3 of water. Alex claims that if $300$ cm\u00b3 of water is added into the vessel, the water will overflow. Do you agree? Explain your answer.",
-      choices: [
-        "\\text{Agree \u2014 the water will overflow}",
-        "\\text{Disagree \u2014 the water will not overflow}",
-        "\\text{Agree \u2014 total water would be }900\\text{ cm}^3",
-        "\\text{Disagree \u2014 capacity is only }600\\text{ cm}^3",
+      key: "l03",
+      label: "L03 · Spheres and hemispheres",
+      idPrefix: "jm32-",
+      questions: [
+        {
+          id: 1,
+          prompt: "The volume of a sphere of radius r is",
+          choices: [
+            "πr²",
+            "\\(\\frac{4}{3}\\)πr³",
+            "4πr²",
+            "\\(\\frac{2}{3}\\)πr³",
+          ],
+          answer: 1,
+        },
+        {
+          id: 2,
+          prompt: "The surface area of a sphere of radius r is",
+          choices: [
+            "2πr²",
+            "3πr²",
+            "4πr²",
+            "\\(\\frac{4}{3}\\)πr³",
+          ],
+          answer: 2,
+        },
+        {
+          id: 3,
+          prompt: "A sphere has diameter 12 cm. Its volume is",
+          choices: [
+            "144π cm³",
+            "216π cm³",
+            "288π cm³",
+            "576π cm³",
+          ],
+          answer: 2,
+        },
+        {
+          id: 4,
+          prompt: "The curved surface area of a hemisphere is 72π cm². The radius is",
+          choices: [
+            "6 cm",
+            "8 cm",
+            "12 cm",
+            "36 cm",
+          ],
+          answer: 0,
+        },
+        {
+          id: 5,
+          prompt: "A sphere just fits inside a cube of side 10 cm. The volume of the sphere is",
+          choices: [
+            "\\(\\frac{250}{3}\\)π cm³",
+            "\\(\\frac{500}{3}\\)π cm³",
+            "500π cm³",
+            "\\(\\frac{1000}{3}\\)π cm³",
+          ],
+          answer: 1,
+        },
       ],
-      answer: 1,
     },
-  ];
-
-  function kx(el, tex, display) {
-    try { katex.render(tex, el, { throwOnError: false, displayMode: !!display }); }
-    catch (e) { el.textContent = tex; }
-  }
-
-  function renderMixedTex(el, text) {
-    if (!text) return;
-    if (!window.katex || !/\$[^$]+\$/.test(text)) {
-      el.textContent = text;
-      return;
-    }
-    el.textContent = "";
-    text.split(/(\$[^$]+\$)/).forEach(function (part) {
-      if (!part) return;
-      if (part.charAt(0) === "$" && part.charAt(part.length - 1) === "$") {
-        const span = document.createElement("span");
-        try { katex.render(part.slice(1, -1), span, { throwOnError: false }); }
-        catch (e) { span.textContent = part; }
-        el.appendChild(span);
-      } else {
-        el.appendChild(document.createTextNode(part));
-      }
-    });
-  }
-
-  function checkQuestion(q, answers) {
-    return answers[q.id] === q.answer;
-  }
-
-  function setReviewBar(progressFill, progressOk, progressBad, score, total) {
-    const okShare = total ? score / total : 0;
-    const badShare = total ? (total - score) / total : 0;
-    if (progressFill) {
-      progressFill.style.width = "100%";
-      progressFill.style.background = "transparent";
-    }
-    if (progressOk) progressOk.style.width = Math.round(okShare * 100) + "%";
-    if (progressBad) progressBad.style.width = Math.round(badShare * 100) + "%";
-  }
-
-  function initQuiz() {
-    const root = document.getElementById("quiz-root");
-    const progressWrap = document.getElementById("quiz-progress-wrap");
-    const progressLabel = document.getElementById("quiz-progress-label");
-    const progressFill = document.getElementById("quiz-progress-fill");
-    const progressOk = document.getElementById("quiz-progress-ok");
-    const progressBad = document.getElementById("quiz-progress-bad");
-    const backBtn = document.getElementById("quiz-back");
-    const nextBtn = document.getElementById("quiz-next");
-    if (!root || !nextBtn) return;
-
-    const state = { index: 0, answers: {}, submitted: false, phase: "quiz" };
-
-    function updateProgress() {
-      if (!progressWrap) return;
-      if (state.phase === "review") {
-        progressWrap.classList.add("done");
-        if (progressLabel) progressLabel.textContent = "Results";
-        const score = QUIZ.filter((q) => checkQuestion(q, state.answers)).length;
-        setReviewBar(progressFill, progressOk, progressBad, score, QUIZ.length);
-        return;
-      }
-      progressWrap.classList.remove("done");
-      const n = QUIZ.length;
-      const cur = state.index + 1;
-      if (progressLabel) progressLabel.textContent = "Question " + cur + " of " + n;
-      if (progressFill) {
-        progressFill.style.width = Math.round((cur / n) * 100) + "%";
-        progressFill.style.background = "";
-      }
-      if (progressOk) progressOk.style.width = "0%";
-      if (progressBad) progressBad.style.width = "0%";
-    }
-
-    function updateNav() {
-      const last = state.index >= QUIZ.length - 1;
-      if (state.phase === "review") {
-        if (backBtn) backBtn.classList.add("hidden");
-        nextBtn.textContent = "Try again";
-        nextBtn.classList.add("retry");
-        return;
-      }
-      nextBtn.classList.remove("retry");
-      if (backBtn) backBtn.classList.toggle("hidden", state.index === 0);
-      nextBtn.textContent = last ? "Submit" : "Next";
-    }
-
-    function render() {
-      root.innerHTML = "";
-      updateProgress();
-      updateNav();
-      if (state.phase === "review") { renderReview(); return; }
-      const q = QUIZ[state.index];
-      if (q) root.appendChild(buildCard(q, false));
-    }
-
-    function buildFigures(figs, layout) {
-      const wrap = document.createElement("div");
-      let cls = "quiz-figure";
-      if (figs.length > 1) {
-        cls += layout === "row" ? " quiz-figure-row" : " quiz-figure-stack";
-      }
-      wrap.className = cls;
-      figs.forEach((fig) => {
-        const img = document.createElement("img");
-        img.src = fig.src;
-        img.alt = fig.alt || "Figure";
-        img.loading = "lazy";
-        wrap.appendChild(img);
-      });
-      return wrap;
-    }
-
-    function buildCard(q, reviewMode) {
-      const card = document.createElement("article");
-      card.className = "quiz-card" + (reviewMode ? " quiz-card-review" : "");
-      if (q.figures && q.figures.length) card.classList.add("has-figure");
-      const ok = checkQuestion(q, state.answers);
-
-      const head = document.createElement("div");
-      head.className = "quiz-head";
-      const num = document.createElement("span");
-      num.className = "quiz-num";
-      num.textContent = q.id + ".";
-      head.appendChild(num);
-      if (q.prompt) {
-        const prompt = document.createElement("div");
-        prompt.className = "quiz-prompt";
-        renderMixedTex(prompt, q.prompt);
-        head.appendChild(prompt);
-      }
-      if (reviewMode) {
-        const mark = document.createElement("span");
-        mark.className = "quiz-mark " + (ok ? "ok" : "bad");
-        mark.textContent = ok ? "\u2713" : "\u2717";
-        head.appendChild(mark);
-      }
-      card.appendChild(head);
-
-      const content = document.createElement("div");
-      content.className = "quiz-content";
-      if (q.stem) {
-        const stem = document.createElement("div");
-        stem.className = "quiz-stem";
-        kx(stem, q.stem, false);
-        content.appendChild(stem);
-      }
-      const body = document.createElement("div");
-      body.className = "quiz-body";
-      body.appendChild(buildMc(q, reviewMode));
-      content.appendChild(body);
-
-      if (q.figures && q.figures.length) {
-        const main = document.createElement("div");
-        main.className = "quiz-main";
-        main.appendChild(content);
-        main.appendChild(buildFigures(q.figures, q.figureLayout));
-        card.appendChild(main);
-      } else {
-        card.appendChild(content);
-      }
-
-      if (reviewMode && !ok) card.appendChild(buildCorrectBlock(q));
-      return card;
-    }
-
-    function buildCorrectBlock(q) {
-      const block = document.createElement("div");
-      block.className = "quiz-result";
-      const msg = document.createElement("span");
-      msg.className = "quiz-result-msg";
-      msg.textContent = "Correct answer: ";
-      const ans = document.createElement("span");
-      ans.className = "quiz-ans-tex";
-      kx(ans, q.choices[q.answer]);
-      msg.appendChild(ans);
-      block.appendChild(msg);
-      return block;
-    }
-
-    function buildMc(q, reviewMode) {
-      const list = document.createElement("div");
-      list.className = "quiz-mc";
-      const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-      q.choices.forEach((tex, i) => {
-        const label = document.createElement("label");
-        label.className = "quiz-mc-opt";
-        if (reviewMode) label.classList.add("locked");
-        const inp = document.createElement("input");
-        inp.type = "radio";
-        inp.name = reviewMode ? "review-q-" + q.id : "q-" + q.id;
-        inp.value = String(i);
-        inp.disabled = reviewMode;
-        if (state.answers[q.id] === i) inp.checked = true;
-        if (!reviewMode) inp.addEventListener("change", () => { state.answers[q.id] = i; });
-        label.appendChild(inp);
-        const letter = document.createElement("span");
-        letter.className = "quiz-mc-letter";
-        letter.textContent = letters[i] + ".";
-        label.appendChild(letter);
-        const math = document.createElement("span");
-        math.className = "quiz-mc-tex";
-        kx(math, tex);
-        label.appendChild(math);
-        if (reviewMode) {
-          if (i === q.answer) label.classList.add("reveal-ok");
-          if (state.answers[q.id] === i && i !== q.answer) label.classList.add("reveal-bad");
-        }
-        list.appendChild(label);
-      });
-      return list;
-    }
-
-    function renderReview() {
-      const score = QUIZ.filter((q) => checkQuestion(q, state.answers)).length;
-      const header = document.createElement("div");
-      header.className = "quiz-review-header";
-      const h2 = document.createElement("h2");
-      h2.textContent = score + " / " + QUIZ.length + " correct";
-      header.appendChild(h2);
-      root.appendChild(header);
-      QUIZ.forEach((q) => root.appendChild(buildCard(q, true)));
-    }
-
-    if (backBtn) {
-      backBtn.addEventListener("click", () => {
-        if (state.phase === "review") return;
-        if (state.index > 0) { state.index--; render(); }
-      });
-    }
-
-    nextBtn.addEventListener("click", () => {
-      if (state.phase === "review") {
-        state.index = 0;
-        state.answers = {};
-        state.submitted = false;
-        state.phase = "quiz";
-        render();
-        return;
-      }
-      if (state.index >= QUIZ.length - 1) {
-        state.submitted = true;
-        state.phase = "review";
-        try {
-          if (window.MathQuizTracker) {
-            window.MathQuizTracker.reportQuiz(
-              {
-                quizId: "math-jm32",
-                idPrefix: "jm32-",
-                section: "JM32",
-                stemMode: "stem-or-prompt",
-                answerTextMode: "always-choices",
-              },
-              QUIZ,
-              state.answers
-            );
-          }
-        } catch(_) {}
-        render();
-        return;
-      }
-      state.index++;
-      render();
-    });
-
-    render();
-  }
-
-  if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", initQuiz);
-  } else {
-    initQuiz();
-  }
-})();
+    {
+      key: "l04",
+      label: "L04 · Similar figures and solids",
+      idPrefix: "jm32-",
+      questions: [
+        {
+          id: 1,
+          prompt: "If two similar solids have length ratio 2 : 3, the ratio of their surface areas is",
+          choices: [
+            "2 : 3",
+            "4 : 9",
+            "8 : 27",
+            "2 : 9",
+          ],
+          answer: 1,
+        },
+        {
+          id: 2,
+          prompt: "If two similar solids have length ratio 2 : 3, the ratio of their volumes is",
+          choices: [
+            "2 : 3",
+            "4 : 9",
+            "8 : 27",
+            "6 : 9",
+          ],
+          answer: 2,
+        },
+        {
+          id: 3,
+          prompt: "The areas of two similar plane figures are 16 cm² and 49 cm². If the larger perimeter is 84 cm, the smaller perimeter is",
+          choices: [
+            "16 cm",
+            "28 cm",
+            "48 cm",
+            "56 cm",
+          ],
+          answer: 2,
+        },
+        {
+          id: 4,
+          prompt: "Two similar cones have radii 4 cm and 6 cm. The ratio of their volumes is",
+          choices: [
+            "2 : 3",
+            "4 : 6",
+            "8 : 27",
+            "16 : 36",
+          ],
+          answer: 2,
+        },
+        {
+          id: 5,
+          prompt: "If the volume ratio of two similar solids is 8 : 125, the length ratio is",
+          choices: [
+            "2 : 5",
+            "4 : 25",
+            "8 : 25",
+            "2 : 25",
+          ],
+          answer: 0,
+        },
+      ],
+    },
+    {
+      key: "l05",
+      label: "L05 · Area ratios in triangles",
+      idPrefix: "jm32-",
+      questions: [
+        {
+          id: 1,
+          prompt: "Two triangles have the same base. If their heights are in the ratio 2 : 5, their areas are in the ratio",
+          choices: [
+            "2 : 5",
+            "4 : 25",
+            "1 : 2",
+            "5 : 2",
+          ],
+          answer: 0,
+        },
+        {
+          id: 2,
+          prompt: "Two triangles have the same height. If their bases are 3 cm and 7 cm, the area ratio is",
+          choices: [
+            "9 : 49",
+            "3 : 7",
+            "1 : 1",
+            "7 : 3",
+          ],
+          answer: 1,
+        },
+        {
+          id: 3,
+          prompt: "△ABC and △DBC have the same height from C to ABD. If AB = 4 cm and BD = 6 cm, then [ABC] : [DBC] =",
+          choices: [
+            "4 : 9",
+            "2 : 5",
+            "2 : 3",
+            "4 : 6",
+          ],
+          answer: 2,
+        },
+        {
+          id: 4,
+          prompt: "A median of a triangle divides it into two triangles of",
+          choices: [
+            "areas in the ratio 2 : 1.",
+            "equal perimeter.",
+            "areas in the ratio 1 : 2 only if it is isosceles.",
+            "equal area.",
+          ],
+          answer: 3,
+        },
+        {
+          id: 5,
+          prompt: "If two triangles have bases 8 cm and 12 cm and the same height, and the smaller area is 20 cm², the larger area is",
+          choices: [
+            "24 cm²",
+            "30 cm²",
+            "36 cm²",
+            "40 cm²",
+          ],
+          answer: 1,
+        },
+      ],
+    },
+  ],
+});
